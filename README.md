@@ -64,7 +64,7 @@ All six solvers were evaluated on a synthetic sine-wave regression task using a 
 ## Project Architecture
 
 ```
-numerical-optimization-nn/
+hybrid-numerical-neural-network/
 |
 |-- core/                          # Neural network engine
 |   |-- network.py                 # MLP: forward, backward, Hessian computation
@@ -151,6 +151,28 @@ This will:
 3. Save six publication-quality plots to `results/`.
 4. Print a summary comparison table to the console.
 
+### Interactive Demo
+
+Launch the Streamlit dashboard for an interactive experience:
+
+```bash
+streamlit run app.py
+```
+
+This opens a browser-based UI where you can:
+- Select which solvers to compare
+- Adjust network architecture, learning rate, and epochs
+- Watch convergence curves generate in real-time
+- View prediction quality and detailed comparison tables
+
+### Run Tests
+
+```bash
+python -m tests.test_core
+```
+
+Runs 12 unit tests covering activations, losses, initializers, network forward/backward, solvers, and LR scheduler.
+
 ### Configuration
 
 All hyperparameters are centralized in [`config.py`](config.py):
@@ -172,6 +194,8 @@ NETWORK_CONFIG = {
 - **Finite-Difference Hessian** -- the full N x N Hessian is computed via centered finite differences for second-order solvers.
 - **Modular Solver Interface** -- all solvers implement a unified `step(network, X, y) -> loss` API, making them interchangeable.
 - **Polynomial LR Scheduling** -- `lr(t) = lr_0 * (1 - t/T)^p` with configurable power `p` for comparative analysis.
+- **Interactive Demo** -- Streamlit dashboard for real-time solver comparison without touching code.
+- **Unit Tested** -- 12 automated tests validate core components end-to-end.
 
 ---
 
@@ -181,6 +205,7 @@ NETWORK_CONFIG = {
 |:---|:---|
 | Core computation | NumPy |
 | Visualization | Matplotlib |
+| Interactive demo | Streamlit |
 | Data preprocessing | scikit-learn |
 | Language | Python 3.8+ |
 

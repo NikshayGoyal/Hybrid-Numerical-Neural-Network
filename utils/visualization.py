@@ -144,6 +144,7 @@ def plot_time_vs_accuracy(results, save_path='results/time_vs_accuracy.png'):
     ax.set_xlabel('Cumulative Wall-Clock Time (s)', fontsize=13)
     ax.set_ylabel('Accuracy / R2', fontsize=13)
     ax.set_title('Time vs. Accuracy', fontsize=15, fontweight='bold')
+    ax.set_ylim(bottom=max(ax.get_ylim()[0], -0.5))  # Clip extreme negatives
     ax.legend(fontsize=11, loc='best', framealpha=0.9)
     ax.grid(True, alpha=0.3)
     ax.tick_params(labelsize=11)
