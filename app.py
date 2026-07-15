@@ -121,7 +121,7 @@ if st.button("🚀 Train & Compare", type="primary", use_container_width=True):
         # Generate data
         layer_sizes = [1] + hidden + [1]
         X_train, X_test, y_train, y_test = load_synthetic_regression(
-            n_samples=n_samples, noise_std=0.1, test_split=0.2, seed=seed
+            n_samples=n_samples, noise_std=0.1, test_size=0.2, seed=seed
         )
 
         st.markdown("### Training Progress")
