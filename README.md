@@ -1,5 +1,10 @@
 # Hybrid Numerical Neural Network
 
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Only-013243?logo=numpy&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Built From Scratch](https://img.shields.io/badge/Built-From%20Scratch-orange)
+
 > Implemented a numerical methods integrated neural network from scratch — developed hybrid weight update strategies using **Gauss-Seidel**, **Newton-Raphson**, **Jacobi**, and **block-wise iterative methods**. Incorporated **polynomial learning rate** scheduling to study convergence dynamics and stability across different solvers. Compared gradient-based and classical numerical methods evaluating cost, convergence speed, and model accuracy. Built entirely with NumPy.
 
 ---
